@@ -11,9 +11,10 @@ class GameActivity extends StatefulWidget {
 }
 
 class _GameActivityState extends State<GameActivity> {
-  String text = "X";
-  String turn = "X";
-
+  String text = "X", turn = "X";
+  String text1 = "", text2 = "", text3 = "";
+  String text4 = "", text5 = "", text6 = "";
+  String text7 = "", text8 = "", text9 = "";
   var played = ["", "", "", "", "", "", "", "", ""];
 
   @override
@@ -41,24 +42,12 @@ class _GameActivityState extends State<GameActivity> {
                 ),
               ),
             ),
+            // FIrst Row
             Row(
               children: [
                 Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.all(5),
-                    height: 100,
-                    padding: const EdgeInsets.all(30),
-                    alignment: Alignment.center,
-                    color: Colors.black,
-                    child: Text(
-                      text,
-                      style: cell_style,
-                    ),
-                  ),
-                ),
-                Expanded(
                   child: InkWell(
-                    onTap: clicked,
+                    onTap: clicked1,
                     child: Container(
                       margin: const EdgeInsets.all(5),
                       height: 100,
@@ -66,7 +55,7 @@ class _GameActivityState extends State<GameActivity> {
                       alignment: Alignment.center,
                       color: Colors.black,
                       child: Text(
-                        text,
+                        played[0],
                         style: cell_style,
                       ),
                     ),
@@ -74,7 +63,7 @@ class _GameActivityState extends State<GameActivity> {
                 ),
                 Expanded(
                   child: InkWell(
-                    onTap: clicked,
+                    onTap: clicked2,
                     child: Container(
                       margin: const EdgeInsets.all(5),
                       height: 100,
@@ -82,7 +71,23 @@ class _GameActivityState extends State<GameActivity> {
                       alignment: Alignment.center,
                       color: Colors.black,
                       child: Text(
-                        text,
+                        played[1],
+                        style: cell_style,
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: InkWell(
+                    onTap: clicked3,
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: 100,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: Colors.black,
+                      child: Text(
+                        played[2],
                         style: cell_style,
                       ),
                     ),
@@ -100,18 +105,34 @@ class _GameActivityState extends State<GameActivity> {
     setState(
       () {
         load_turn();
-        // print("turn is $turn");
       },
     );
   }
 
   void load_turn() {
+    text = turn;
     if (turn == "O") {
-      text = turn;
       turn = "X";
     } else {
-      text = turn;
       turn = "O";
     }
+  }
+
+  void clicked1() {
+    if (played[0] != "") return;
+    clicked();
+    played[0] = text;
+  }
+
+  void clicked2() {
+    if (played[1] != "") return;
+    clicked();
+    played[1] = text;
+  }
+
+  void clicked3() {
+    if (played[2] != "") return;
+    clicked();
+    played[2] = text;
   }
 }
