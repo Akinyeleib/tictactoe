@@ -15,6 +15,11 @@ class _GameActivityState extends State<GameActivity> {
   String text1 = "", text2 = "", text3 = "";
   String text4 = "", text5 = "", text6 = "";
   String text7 = "", text8 = "", text9 = "";
+
+  Color color1 = default_color, color2 = default_color, color3 = default_color;
+  Color color4 = default_color, color5 = default_color, color6 = default_color;
+  Color color7 = default_color, color8 = default_color, color9 = default_color;
+
   var played = ["", "", "", "", "", "", "", "", ""];
 
   @override
@@ -53,7 +58,7 @@ class _GameActivityState extends State<GameActivity> {
                       height: 100,
                       padding: const EdgeInsets.all(30),
                       alignment: Alignment.center,
-                      color: Colors.black,
+                      color: color1,
                       child: Text(
                         played[0],
                         style: cell_style,
@@ -69,7 +74,7 @@ class _GameActivityState extends State<GameActivity> {
                       height: 100,
                       padding: const EdgeInsets.all(30),
                       alignment: Alignment.center,
-                      color: Colors.black,
+                      color: color2,
                       child: Text(
                         played[1],
                         style: cell_style,
@@ -85,7 +90,7 @@ class _GameActivityState extends State<GameActivity> {
                       height: 100,
                       padding: const EdgeInsets.all(30),
                       alignment: Alignment.center,
-                      color: Colors.black,
+                      color: color3,
                       child: Text(
                         played[2],
                         style: cell_style,
@@ -112,8 +117,10 @@ class _GameActivityState extends State<GameActivity> {
   void load_turn() {
     text = turn;
     if (turn == "O") {
+      color = O_Color;
       turn = "X";
     } else {
+      color = X_Color;
       turn = "O";
     }
   }
@@ -122,17 +129,20 @@ class _GameActivityState extends State<GameActivity> {
     if (played[0] != "") return;
     clicked();
     played[0] = text;
+    color1 = color;
   }
 
   void clicked2() {
     if (played[1] != "") return;
     clicked();
     played[1] = text;
+    color2 = color;
   }
 
   void clicked3() {
     if (played[2] != "") return;
     clicked();
     played[2] = text;
+    color3 = color;
   }
 }
