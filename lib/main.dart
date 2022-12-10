@@ -21,6 +21,17 @@ class _GameActivityState extends State<GameActivity> {
   Color color7 = default_color, color8 = default_color, color9 = default_color;
 
   var played = ["", "", "", "", "", "", "", "", ""];
+  List<Color> colors_pack = [
+    Colors.black,
+    Colors.black,
+    Colors.black,
+    Colors.black,
+    Colors.black,
+    Colors.black,
+    Colors.black,
+    Colors.black,
+    Colors.black
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +58,7 @@ class _GameActivityState extends State<GameActivity> {
                 ),
               ),
             ),
-            // FIrst Row
+            // First Row
             Row(
               children: [
                 Expanded(
@@ -58,7 +69,7 @@ class _GameActivityState extends State<GameActivity> {
                       height: 100,
                       padding: const EdgeInsets.all(30),
                       alignment: Alignment.center,
-                      color: color1,
+                      color: colors_pack[0],
                       child: Text(
                         played[0],
                         style: cell_style,
@@ -74,7 +85,7 @@ class _GameActivityState extends State<GameActivity> {
                       height: 100,
                       padding: const EdgeInsets.all(30),
                       alignment: Alignment.center,
-                      color: color2,
+                      color: colors_pack[1],
                       child: Text(
                         played[1],
                         style: cell_style,
@@ -90,9 +101,115 @@ class _GameActivityState extends State<GameActivity> {
                       height: 100,
                       padding: const EdgeInsets.all(30),
                       alignment: Alignment.center,
-                      color: color3,
+                      color: colors_pack[2],
                       child: Text(
                         played[2],
+                        style: cell_style,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            // Second Row
+            Row(
+              children: [
+                Expanded(
+                  child: InkWell(
+                    onTap: clicked4,
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: 100,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: colors_pack[3],
+                      child: Text(
+                        played[3],
+                        style: cell_style,
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: InkWell(
+                    onTap: clicked5,
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: 100,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: colors_pack[4],
+                      child: Text(
+                        played[4],
+                        style: cell_style,
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: InkWell(
+                    onTap: clicked6,
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: 100,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: colors_pack[5],
+                      child: Text(
+                        played[5],
+                        style: cell_style,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            // Third Row
+            Row(
+              children: [
+                Expanded(
+                  child: InkWell(
+                    onTap: clicked7,
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: 100,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: colors_pack[6],
+                      child: Text(
+                        played[6],
+                        style: cell_style,
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: InkWell(
+                    onTap: clicked8,
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: 100,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: colors_pack[7],
+                      child: Text(
+                        played[7],
+                        style: cell_style,
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: InkWell(
+                    onTap: clicked9,
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: 100,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: colors_pack[8],
+                      child: Text(
+                        played[8],
                         style: cell_style,
                       ),
                     ),
@@ -126,23 +243,74 @@ class _GameActivityState extends State<GameActivity> {
   }
 
   void clicked1() {
-    if (played[0] != "") return;
+    int num = 0;
+    if (played[num] != "") return;
     clicked();
-    played[0] = text;
-    color1 = color;
+    played[num] = text;
+    colors_pack[num] = color;
   }
 
   void clicked2() {
-    if (played[1] != "") return;
+    int num = 1;
+    if (played[num] != "") return;
     clicked();
-    played[1] = text;
-    color2 = color;
+    played[num] = text;
+    colors_pack[num] = color;
   }
 
   void clicked3() {
-    if (played[2] != "") return;
+    int num = 2;
+    if (played[num] != "") return;
     clicked();
-    played[2] = text;
-    color3 = color;
+    played[num] = text;
+    colors_pack[num] = color;
+  }
+
+  void clicked4() {
+    int num = 3;
+    if (played[num] != "") return;
+    clicked();
+    played[num] = text;
+    colors_pack[num] = color;
+  }
+
+  void clicked5() {
+    int num = 4;
+    if (played[num] != "") return;
+    clicked();
+    played[num] = text;
+    colors_pack[num] = color;
+  }
+
+  void clicked6() {
+    int num = 5;
+    if (played[num] != "") return;
+    clicked();
+    played[num] = text;
+    colors_pack[num] = color;
+  }
+
+  void clicked7() {
+    int num = 6;
+    if (played[num] != "") return;
+    clicked();
+    played[num] = text;
+    colors_pack[num] = color;
+  }
+
+  void clicked8() {
+    int num = 7;
+    if (played[num] != "") return;
+    clicked();
+    played[num] = text;
+    colors_pack[num] = color;
+  }
+
+  void clicked9() {
+    int num = 8;
+    if (played[num] != "") return;
+    clicked();
+    played[num] = text;
+    colors_pack[num] = color;
   }
 }
