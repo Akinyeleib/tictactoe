@@ -12,11 +12,9 @@ class GameActivity extends StatefulWidget {
 
 class _GameActivityState extends State<GameActivity> {
   String text = "X", turn = "X";
-  String text1 = "", text2 = "", text3 = "";
-  String text4 = "", text5 = "", text6 = "";
-  String text7 = "", text8 = "", text9 = "";
 
   int play_count = 0, num = 0;
+  bool game_won = false;
 
   Color color1 = default_color, color2 = default_color, color3 = default_color;
   Color color4 = default_color, color5 = default_color, color6 = default_color;
@@ -226,6 +224,7 @@ class _GameActivityState extends State<GameActivity> {
   }
 
   void clicked() {
+    if (played[num] != "" || game_won) return;
     play_count++;
     setState(
       () {
@@ -234,7 +233,22 @@ class _GameActivityState extends State<GameActivity> {
         colors_pack[num] = color;
       },
     );
-    if (play_count >= 9) reset_board();
+
+    for (var c in winning_positions) {
+      if (c.contains(num) && check_winner(c)) {
+        game_won = true;
+      }
+      if (game_won) {
+        colors_pack[c[0]] = win_color;
+        colors_pack[c[1]] = win_color;
+        colors_pack[c[2]] = win_color;
+        break;
+      }
+    }
+    // if (game_won) {
+    //   reset_board();
+    // }
+    // if (play_count >= 9) reset_board();
   }
 
   void load_turn() {
@@ -248,62 +262,62 @@ class _GameActivityState extends State<GameActivity> {
     }
   }
 
+  bool check_winner(List<int> combo) {
+    String one = played[combo[0]];
+    String two = played[combo[1]];
+    String three = played[combo[2]];
+
+    return one == two && two == three;
+  }
+
   void clicked1() {
     num = 0;
-    if (played[num] != "") return;
     clicked();
   }
 
   void clicked2() {
     num = 1;
-    if (played[num] != "") return;
     clicked();
   }
 
   void clicked3() {
     num = 2;
-    if (played[num] != "") return;
     clicked();
   }
 
   void clicked4() {
     num = 3;
-    if (played[num] != "") return;
     clicked();
   }
 
   void clicked5() {
     num = 4;
-    if (played[num] != "") return;
     clicked();
   }
 
   void clicked6() {
     num = 5;
-    if (played[num] != "") return;
     clicked();
   }
 
   void clicked7() {
     num = 6;
-    if (played[num] != "") return;
     clicked();
   }
 
   void clicked8() {
     num = 7;
-    if (played[num] != "") return;
     clicked();
   }
 
   void clicked9() {
     num = 8;
-    if (played[num] != "") return;
     clicked();
   }
 
   void reset_board() {
     play_count = 0;
+    game_won = false;
     for (int index = 0; index < colors_pack.length; index++) {
       played[index] = "";
       colors_pack[index] = default_color;

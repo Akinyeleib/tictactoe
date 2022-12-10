@@ -8,9 +8,19 @@ var cell_style = TextStyle(
 
 double my_height = 100;
 
-var X_Color = Colors.blue;
-var O_Color = Colors.brown;
-var color = Colors.black;
-var default_color = Colors.black;
-var win_color = Colors.green;
+Color X_Color = Colors.blue;
+Color O_Color = Colors.brown;
+Color color = Colors.black;
+Color default_color = Colors.black;
+Color win_color = Colors.green;
 
+List<List<int>> winning_positions = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [6, 3, 0],
+  [7, 4, 1],
+  [5, 8, 2],
+  [0, 4, 8],
+  [6, 4, 2]
+];
