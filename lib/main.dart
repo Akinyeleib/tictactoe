@@ -16,6 +16,8 @@ class _GameActivityState extends State<GameActivity> {
   String text4 = "", text5 = "", text6 = "";
   String text7 = "", text8 = "", text9 = "";
 
+  int play_count = 0, num = 0;
+
   Color color1 = default_color, color2 = default_color, color3 = default_color;
   Color color4 = default_color, color5 = default_color, color6 = default_color;
   Color color7 = default_color, color8 = default_color, color9 = default_color;
@@ -66,7 +68,7 @@ class _GameActivityState extends State<GameActivity> {
                     onTap: clicked1,
                     child: Container(
                       margin: const EdgeInsets.all(5),
-                      height: 100,
+                      height: my_height,
                       padding: const EdgeInsets.all(30),
                       alignment: Alignment.center,
                       color: colors_pack[0],
@@ -82,7 +84,7 @@ class _GameActivityState extends State<GameActivity> {
                     onTap: clicked2,
                     child: Container(
                       margin: const EdgeInsets.all(5),
-                      height: 100,
+                      height: my_height,
                       padding: const EdgeInsets.all(30),
                       alignment: Alignment.center,
                       color: colors_pack[1],
@@ -98,7 +100,7 @@ class _GameActivityState extends State<GameActivity> {
                     onTap: clicked3,
                     child: Container(
                       margin: const EdgeInsets.all(5),
-                      height: 100,
+                      height: my_height,
                       padding: const EdgeInsets.all(30),
                       alignment: Alignment.center,
                       color: colors_pack[2],
@@ -119,7 +121,7 @@ class _GameActivityState extends State<GameActivity> {
                     onTap: clicked4,
                     child: Container(
                       margin: const EdgeInsets.all(5),
-                      height: 100,
+                      height: my_height,
                       padding: const EdgeInsets.all(30),
                       alignment: Alignment.center,
                       color: colors_pack[3],
@@ -135,7 +137,7 @@ class _GameActivityState extends State<GameActivity> {
                     onTap: clicked5,
                     child: Container(
                       margin: const EdgeInsets.all(5),
-                      height: 100,
+                      height: my_height,
                       padding: const EdgeInsets.all(30),
                       alignment: Alignment.center,
                       color: colors_pack[4],
@@ -151,7 +153,7 @@ class _GameActivityState extends State<GameActivity> {
                     onTap: clicked6,
                     child: Container(
                       margin: const EdgeInsets.all(5),
-                      height: 100,
+                      height: my_height,
                       padding: const EdgeInsets.all(30),
                       alignment: Alignment.center,
                       color: colors_pack[5],
@@ -172,7 +174,7 @@ class _GameActivityState extends State<GameActivity> {
                     onTap: clicked7,
                     child: Container(
                       margin: const EdgeInsets.all(5),
-                      height: 100,
+                      height: my_height,
                       padding: const EdgeInsets.all(30),
                       alignment: Alignment.center,
                       color: colors_pack[6],
@@ -188,7 +190,7 @@ class _GameActivityState extends State<GameActivity> {
                     onTap: clicked8,
                     child: Container(
                       margin: const EdgeInsets.all(5),
-                      height: 100,
+                      height: my_height,
                       padding: const EdgeInsets.all(30),
                       alignment: Alignment.center,
                       color: colors_pack[7],
@@ -204,7 +206,7 @@ class _GameActivityState extends State<GameActivity> {
                     onTap: clicked9,
                     child: Container(
                       margin: const EdgeInsets.all(5),
-                      height: 100,
+                      height: my_height,
                       padding: const EdgeInsets.all(30),
                       alignment: Alignment.center,
                       color: colors_pack[8],
@@ -224,11 +226,15 @@ class _GameActivityState extends State<GameActivity> {
   }
 
   void clicked() {
+    play_count++;
     setState(
       () {
         load_turn();
+        played[num] = text;
+        colors_pack[num] = color;
       },
     );
+    if (play_count >= 9) reset_board();
   }
 
   void load_turn() {
@@ -243,79 +249,61 @@ class _GameActivityState extends State<GameActivity> {
   }
 
   void clicked1() {
-    int num = 0;
+    num = 0;
     if (played[num] != "") return;
     clicked();
-    played[num] = text;
-    colors_pack[num] = color;
   }
 
   void clicked2() {
-    int num = 1;
+    num = 1;
     if (played[num] != "") return;
     clicked();
-    played[num] = text;
-    colors_pack[num] = color;
   }
 
   void clicked3() {
-    int num = 2;
+    num = 2;
     if (played[num] != "") return;
     clicked();
-    played[num] = text;
-    colors_pack[num] = color;
   }
 
   void clicked4() {
-    int num = 3;
+    num = 3;
     if (played[num] != "") return;
     clicked();
-    played[num] = text;
-    colors_pack[num] = color;
   }
 
   void clicked5() {
-    int num = 4;
+    num = 4;
     if (played[num] != "") return;
     clicked();
-    played[num] = text;
-    colors_pack[num] = color;
   }
 
   void clicked6() {
-    int num = 5;
+    num = 5;
     if (played[num] != "") return;
     clicked();
-    played[num] = text;
-    colors_pack[num] = color;
   }
 
   void clicked7() {
-    int num = 6;
+    num = 6;
     if (played[num] != "") return;
     clicked();
-    played[num] = text;
-    colors_pack[num] = color;
   }
 
   void clicked8() {
-    int num = 7;
+    num = 7;
     if (played[num] != "") return;
     clicked();
-    played[num] = text;
-    colors_pack[num] = color;
   }
 
   void clicked9() {
-    int num = 8;
+    num = 8;
     if (played[num] != "") return;
     clicked();
-    played[num] = text;
-    colors_pack[num] = color;
-    reset_board();
   }
 
   void reset_board() {
+    play_count = 0;
     for (int index = 0; index < colors_pack.length; index++) {
       played[index] = "";
       colors_pack[index] = default_color;
