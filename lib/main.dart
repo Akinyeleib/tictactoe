@@ -21,8 +21,20 @@ class _GameActivityState extends State<GameActivity> {
           centerTitle: true,
         ),
         body: Column(
-          children: const [
-            
+          children: [
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(20),
+              child: Text(
+                "X or O turn",
+                style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.blueAccent,
+                ),
+              ),
+              alignment: Alignment.center,
+              color: Colors.amber,
+            ),
           ],
         ),
       ),
