@@ -312,5 +312,13 @@ class _GameActivityState extends State<GameActivity> {
     clicked();
     played[num] = text;
     colors_pack[num] = color;
+    reset_board();
+  }
+
+  void reset_board() {
+    for (int index = 0; index < colors_pack.length; index++) {
+      played[index] = "";
+      colors_pack[index] = default_color;
+    }
   }
 }
