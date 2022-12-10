@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'helper.dart';
 
-void main() => runApp(const GameActivity());
+void main() => runApp(GameActivity());
 
 class GameActivity extends StatefulWidget {
-  const GameActivity({super.key});
+  GameActivity({super.key});
 
   @override
   State<GameActivity> createState() => _GameActivityState();
 }
 
 class _GameActivityState extends State<GameActivity> {
+  String text = "X";
+  String turn = "X";
+
+  var played = ["", "", "", "", "", "", "", "", ""];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,20 +30,88 @@ class _GameActivityState extends State<GameActivity> {
           children: [
             Container(
               width: double.infinity,
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
+              alignment: Alignment.center,
+              color: Colors.amber,
               child: Text(
-                "X or O turn",
-                style: TextStyle(
+                "$turn turn",
+                style: const TextStyle(
                   fontSize: 25,
                   color: Colors.blueAccent,
                 ),
               ),
-              alignment: Alignment.center,
-              color: Colors.amber,
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.all(5),
+                    height: 100,
+                    padding: const EdgeInsets.all(30),
+                    alignment: Alignment.center,
+                    color: Colors.black,
+                    child: Text(
+                      text,
+                      style: cell_style,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: InkWell(
+                    onTap: clicked,
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: 100,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: Colors.black,
+                      child: Text(
+                        text,
+                        style: cell_style,
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: InkWell(
+                    onTap: clicked,
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: 100,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: Colors.black,
+                      child: Text(
+                        text,
+                        style: cell_style,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
       ),
     );
+  }
+
+  void clicked() {
+    setState(
+      () {
+        load_turn();
+        // print("turn is $turn");
+      },
+    );
+  }
+
+  void load_turn() {
+    if (turn == "O") {
+      text = turn;
+      turn = "X";
+    } else {
+      text = turn;
+      turn = "O";
+    }
   }
 }
