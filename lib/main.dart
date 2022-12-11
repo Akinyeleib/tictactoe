@@ -13,7 +13,7 @@ class GameActivity extends StatefulWidget {
 class _GameActivityState extends State<GameActivity> {
   String text = "X", turn = "X";
 
-  int play_count = 0, num = 0;
+  int play_count = 0, num = 0, x_score = 0, o_score = 0;
   bool game_won = false;
 
   Color color1 = default_color, color2 = default_color, color3 = default_color;
@@ -217,6 +217,34 @@ class _GameActivityState extends State<GameActivity> {
                 ),
               ],
             ),
+            Container(
+              margin: cell_margin,
+              width: double.infinity,
+              padding: const EdgeInsets.all(20),
+              alignment: Alignment.center,
+              color: X_Color,
+              child: Text(
+                "X Score: $x_score",
+                style: const TextStyle(
+                  fontSize: 25,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            Container(
+              margin: cell_margin,
+              width: double.infinity,
+              padding: const EdgeInsets.all(20),
+              alignment: Alignment.center,
+              color: O_Color,
+              child: Text(
+                "O Score: $o_score",
+                style: const TextStyle(
+                  fontSize: 25,
+                  color: Colors.white,
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -231,20 +259,22 @@ class _GameActivityState extends State<GameActivity> {
         load_turn();
         played[num] = text;
         colors_pack[num] = color;
+
+        for (var c in winning_positions) {
+          if (c.contains(num) && check_winner(c)) {
+            game_won = true;
+            colors_pack[c[0]] = win_color;
+            colors_pack[c[1]] = win_color;
+            colors_pack[c[2]] = win_color;
+            if (played[c[0]] == "X")
+              x_score++;
+            else
+              o_score++;
+            break;
+          }
+        }
       },
     );
-
-    for (var c in winning_positions) {
-      if (c.contains(num) && check_winner(c)) {
-        game_won = true;
-      }
-      if (game_won) {
-        colors_pack[c[0]] = win_color;
-        colors_pack[c[1]] = win_color;
-        colors_pack[c[2]] = win_color;
-        break;
-      }
-    }
     // if (game_won) {
     //   reset_board();
     // }
