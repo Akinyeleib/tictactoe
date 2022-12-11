@@ -11,7 +11,7 @@ double my_height = 100;
 Color X_Color = Colors.blue;
 Color O_Color = Colors.brown;
 Color color = Colors.black;
-Color default_color = Colors.black;
+Color default_color = Colors.grey;
 Color win_color = Colors.green;
 
 List<List<int>> winning_positions = [
@@ -24,3 +24,4 @@ List<List<int>> winning_positions = [
   [0, 4, 8],
   [6, 4, 2]
 ];
+

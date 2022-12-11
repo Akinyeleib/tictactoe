@@ -22,15 +22,15 @@ class _GameActivityState extends State<GameActivity> {
 
   var played = ["", "", "", "", "", "", "", "", ""];
   List<Color> colors_pack = [
-    Colors.black,
-    Colors.black,
-    Colors.black,
-    Colors.black,
-    Colors.black,
-    Colors.black,
-    Colors.black,
-    Colors.black,
-    Colors.black
+    default_color,
+    default_color,
+    default_color,
+    default_color,
+    default_color,
+    default_color,
+    default_color,
+    default_color,
+    default_color
   ];
 
   @override
@@ -40,10 +40,11 @@ class _GameActivityState extends State<GameActivity> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Tic Tac Toe"),
+          title: const Text("Simple Tic Tac Toe Game"),
           centerTitle: true,
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
               width: double.infinity,
@@ -275,10 +276,9 @@ class _GameActivityState extends State<GameActivity> {
         }
       },
     );
-    // if (game_won) {
-    //   reset_board();
-    // }
-    // if (play_count >= 9) reset_board();
+    if (game_won || play_count >= 9) {
+      reset_board();
+    }
   }
 
   void load_turn() {
