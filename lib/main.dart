@@ -36,17 +36,18 @@ class _GameActivityState extends State<GameActivity> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.purple),
+      theme: ThemeData(primarySwatch: themeColor),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Simple Tic Tac Toe Game"),
+          title: const Text(appTitle),
           centerTitle: true,
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
+              margin: cell_margin,
               width: double.infinity,
               padding: const EdgeInsets.all(20),
               alignment: Alignment.center,
