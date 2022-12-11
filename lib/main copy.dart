@@ -1,7 +1,8 @@
+/*
 import 'package:flutter/material.dart';
 import 'helper.dart';
 
-void main() => runApp(GameActivity());
+// void main() => runApp(GameActivity());
 
 class GameActivity extends StatefulWidget {
   GameActivity({super.key});
@@ -66,27 +67,48 @@ class _GameActivityState extends State<GameActivity> {
                 Expanded(
                   child: InkWell(
                     onTap: clicked1,
-                    child: MyContainer(
-                      played[0],
-                      (colors_pack[0]),
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: my_height,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: colors_pack[0],
+                      child: Text(
+                        played[0],
+                        style: cell_style,
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
                   child: InkWell(
                     onTap: clicked2,
-                    child: MyContainer(
-                      played[1],
-                      (colors_pack[1]),
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: my_height,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: colors_pack[1],
+                      child: Text(
+                        played[1],
+                        style: cell_style,
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
                   child: InkWell(
                     onTap: clicked3,
-                    child: MyContainer(
-                      played[2],
-                      (colors_pack[2]),
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: my_height,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: colors_pack[2],
+                      child: Text(
+                        played[2],
+                        style: cell_style,
+                      ),
                     ),
                   ),
                 ),
@@ -98,27 +120,48 @@ class _GameActivityState extends State<GameActivity> {
                 Expanded(
                   child: InkWell(
                     onTap: clicked4,
-                    child: MyContainer(
-                      played[3],
-                      (colors_pack[3]),
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: my_height,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: colors_pack[3],
+                      child: Text(
+                        played[3],
+                        style: cell_style,
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
                   child: InkWell(
                     onTap: clicked5,
-                    child: MyContainer(
-                      played[4],
-                      (colors_pack[4]),
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: my_height,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: colors_pack[4],
+                      child: Text(
+                        played[4],
+                        style: cell_style,
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
                   child: InkWell(
                     onTap: clicked6,
-                    child: MyContainer(
-                      played[5],
-                      (colors_pack[5]),
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: my_height,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: colors_pack[5],
+                      child: Text(
+                        played[5],
+                        style: cell_style,
+                      ),
                     ),
                   ),
                 ),
@@ -130,27 +173,48 @@ class _GameActivityState extends State<GameActivity> {
                 Expanded(
                   child: InkWell(
                     onTap: clicked7,
-                    child: MyContainer(
-                      played[6],
-                      (colors_pack[6]),
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: my_height,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: colors_pack[6],
+                      child: Text(
+                        played[6],
+                        style: cell_style,
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
                   child: InkWell(
                     onTap: clicked8,
-                    child: MyContainer(
-                      played[7],
-                      (colors_pack[7]),
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: my_height,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: colors_pack[7],
+                      child: Text(
+                        played[7],
+                        style: cell_style,
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
                   child: InkWell(
                     onTap: clicked9,
-                    child: MyContainer(
-                      played[8],
-                      (colors_pack[8]),
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      height: my_height,
+                      padding: const EdgeInsets.all(30),
+                      alignment: Alignment.center,
+                      color: colors_pack[8],
+                      child: Text(
+                        played[8],
+                        style: cell_style,
+                      ),
                     ),
                   ),
                 ),
@@ -292,3 +356,4 @@ class _GameActivityState extends State<GameActivity> {
     }
   }
 }
+*/

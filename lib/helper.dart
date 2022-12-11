@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const String appTitle = "Simple Tic Tac Toe Game";
+const String appTitle = "Tic Tac Toe";
 const EdgeInsets cell_margin = EdgeInsets.all(5);
 const TextStyle cell_style = TextStyle(
   color: Colors.white,
@@ -26,3 +26,23 @@ List<List<int>> winning_positions = [
   [0, 4, 8],
   [6, 4, 2]
 ];
+
+class MyContainer extends StatelessWidget {
+  String theText;
+  Color the_color;
+  MyContainer(this.theText, this.the_color, {super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(5),
+      height: my_height,
+      padding: const EdgeInsets.all(30),
+      alignment: Alignment.center,
+      color: the_color,
+      child: Text(
+        theText,
+        style: cell_style,
+      ),
+    );
+  }
+}
