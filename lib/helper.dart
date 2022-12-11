@@ -10,11 +10,12 @@ const TextStyle cell_style = TextStyle(
 double my_height = 100;
 
 Color X_Color = Colors.blue;
-Color O_Color = Colors.brown;
+Color O_Color = Colors.amber;
 Color color = Colors.black;
 Color default_color = Colors.grey;
 Color win_color = Colors.green;
 MaterialColor themeColor = Colors.purple;
+Color container_color = Colors.amber;
 
 List<List<int>> winning_positions = [
   [0, 1, 2],

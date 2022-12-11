@@ -51,12 +51,12 @@ class _GameActivityState extends State<GameActivity> {
               width: double.infinity,
               padding: const EdgeInsets.all(20),
               alignment: Alignment.center,
-              color: Colors.amber,
+              color: container_color,
               child: Text(
                 "$turn turn",
                 style: const TextStyle(
                   fontSize: 25,
-                  color: Colors.blueAccent,
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -224,9 +224,11 @@ class _GameActivityState extends State<GameActivity> {
     if (turn == "O") {
       color = O_Color;
       turn = "X";
+      container_color = X_Color;
     } else {
       color = X_Color;
       turn = "O";
+      container_color = O_Color;
     }
   }
 
