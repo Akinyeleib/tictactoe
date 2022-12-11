@@ -39,6 +39,7 @@ class _GameActivityState extends State<GameActivity> {
       theme: ThemeData(primarySwatch: themeColor),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.brown,
         appBar: AppBar(
           title: const Text(appTitle),
           centerTitle: true,
