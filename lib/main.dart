@@ -52,7 +52,8 @@ class _GameActivityState extends State<GameActivity> {
               width: double.infinity,
               padding: const EdgeInsets.all(20),
               alignment: Alignment.center,
-              color: container_color,
+              // color: container_color,
+              color: turn == "X" ? X_Color : O_Color,
               child: Text(
                 "$turn turn",
                 style: const TextStyle(
