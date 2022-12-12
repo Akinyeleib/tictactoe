@@ -39,13 +39,13 @@ class _GameActivityState extends State<GameActivity> {
       theme: ThemeData(primarySwatch: themeColor),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.brown,
+        backgroundColor: scaffold_color,
         appBar: AppBar(
           title: const Text(appTitle),
           centerTitle: true,
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
               margin: cell_margin,
@@ -157,34 +157,42 @@ class _GameActivityState extends State<GameActivity> {
                 ),
               ],
             ),
+            // Score Panel
             Container(
-              margin: cell_margin,
-              width: double.infinity,
-              padding: const EdgeInsets.all(20),
-              alignment: Alignment.center,
-              color: X_Color,
-              child: Text(
-                "X Score: $x_score",
-                style: const TextStyle(
-                  fontSize: 25,
-                  color: Colors.white,
-                ),
+              color: score_panel_color,
+              child: Column(
+                children: [
+                  Container(
+                    margin: cell_margin,
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(20),
+                    alignment: Alignment.center,
+                    color: X_Color,
+                    child: Text(
+                      "X Score: $x_score",
+                      style: const TextStyle(
+                        fontSize: 25,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: cell_margin,
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(20),
+                    alignment: Alignment.center,
+                    color: O_Color,
+                    child: Text(
+                      "O Score: $o_score",
+                      style: const TextStyle(
+                        fontSize: 25,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ),
-            Container(
-              margin: cell_margin,
-              width: double.infinity,
-              padding: const EdgeInsets.all(20),
-              alignment: Alignment.center,
-              color: O_Color,
-              child: Text(
-                "O Score: $o_score",
-                style: const TextStyle(
-                  fontSize: 25,
-                  color: Colors.white,
-                ),
-              ),
-            ),
+            )
           ],
         ),
       ),

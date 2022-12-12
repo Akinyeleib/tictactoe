@@ -9,13 +9,15 @@ const TextStyle cell_style = TextStyle(
 
 double my_height = 100;
 
-Color X_Color = Colors.blue;
-Color O_Color = Colors.amber;
+Color X_Color = Color.fromARGB(255, 28, 27, 27);
+Color O_Color = Color.fromARGB(255, 159, 17, 7);
 Color color = Colors.black;
 Color default_color = Colors.grey;
 Color win_color = Colors.green;
-MaterialColor themeColor = Colors.purple;
-Color container_color = Colors.amber;
+MaterialColor themeColor = Colors.teal;
+Color container_color = Color.fromARGB(255, 142, 143, 146);
+Color scaffold_color = Colors.white;
+Color score_panel_color = Color.fromARGB(255, 9, 10, 10);
 
 List<List<int>> winning_positions = [
   [0, 1, 2],
