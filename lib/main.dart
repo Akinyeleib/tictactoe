@@ -62,101 +62,107 @@ class _GameActivityState extends State<GameActivity> {
                 ),
               ),
             ),
-            // First Row
-            Row(
-              children: [
-                Expanded(
-                  child: InkWell(
-                    onTap: clicked1,
-                    child: MyContainer(
-                      played[0],
-                      (colors_pack[0]),
-                    ),
+            Container(
+              child: Column(
+                children: [
+                  // First Row
+                  Row(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: clicked1,
+                          child: MyContainer(
+                            played[0],
+                            (colors_pack[0]),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: InkWell(
+                          onTap: clicked2,
+                          child: MyContainer(
+                            played[1],
+                            (colors_pack[1]),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: InkWell(
+                          onTap: clicked3,
+                          child: MyContainer(
+                            played[2],
+                            (colors_pack[2]),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: clicked2,
-                    child: MyContainer(
-                      played[1],
-                      (colors_pack[1]),
-                    ),
+                  // Second Row
+                  Row(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: clicked4,
+                          child: MyContainer(
+                            played[3],
+                            (colors_pack[3]),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: InkWell(
+                          onTap: clicked5,
+                          child: MyContainer(
+                            played[4],
+                            (colors_pack[4]),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: InkWell(
+                          onTap: clicked6,
+                          child: MyContainer(
+                            played[5],
+                            (colors_pack[5]),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: clicked3,
-                    child: MyContainer(
-                      played[2],
-                      (colors_pack[2]),
-                    ),
+                  // Third Row
+                  Row(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: clicked7,
+                          child: MyContainer(
+                            played[6],
+                            (colors_pack[6]),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: InkWell(
+                          onTap: clicked8,
+                          child: MyContainer(
+                            played[7],
+                            (colors_pack[7]),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: InkWell(
+                          onTap: clicked9,
+                          child: MyContainer(
+                            played[8],
+                            (colors_pack[8]),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ],
-            ),
-            // Second Row
-            Row(
-              children: [
-                Expanded(
-                  child: InkWell(
-                    onTap: clicked4,
-                    child: MyContainer(
-                      played[3],
-                      (colors_pack[3]),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: clicked5,
-                    child: MyContainer(
-                      played[4],
-                      (colors_pack[4]),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: clicked6,
-                    child: MyContainer(
-                      played[5],
-                      (colors_pack[5]),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            // Third Row
-            Row(
-              children: [
-                Expanded(
-                  child: InkWell(
-                    onTap: clicked7,
-                    child: MyContainer(
-                      played[6],
-                      (colors_pack[6]),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: clicked8,
-                    child: MyContainer(
-                      played[7],
-                      (colors_pack[7]),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: clicked9,
-                    child: MyContainer(
-                      played[8],
-                      (colors_pack[8]),
-                    ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
             // Bottom Panel
             // Score Panel
