@@ -158,55 +158,35 @@ class _GameActivityState extends State<GameActivity> {
                 ),
               ],
             ),
+            // Bottom Panel
             // Score Panel
             Container(
               color: score_panel_color,
               child: Column(
                 children: [
+                  ScoreContainer(
+                    X_Color,
+                    "X Score: $x_score",
+                  ),
+                  ScoreContainer(
+                    O_Color,
+                    "O Score: $o_score",
+                  ),
+                  // Restart Game
                   Container(
                     margin: cell_margin,
                     width: double.infinity,
                     padding: const EdgeInsets.all(10),
                     alignment: Alignment.center,
-                    color: X_Color,
-                    child: Text(
-                      "X Score: $x_score",
-                      style: const TextStyle(
-                        fontSize: 25,
-                        color: Colors.white,
+                    color: themeColor,
+                    child: TextButton(
+                      onPressed: restart,
+                      child: const Text(
+                        "Reset",
+                        style: score_container_style,
                       ),
                     ),
                   ),
-                  Container(
-                    margin: cell_margin,
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(10),
-                    alignment: Alignment.center,
-                    color: O_Color,
-                    child: Text(
-                      "O Score: $o_score",
-                      style: const TextStyle(
-                        fontSize: 25,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  Container(
-                      margin: cell_margin,
-                      width: double.infinity,
-                      padding: const EdgeInsets.all(10),
-                      alignment: Alignment.center,
-                      color: O_Color,
-                      child: TextButton(
-                        onPressed: restart,
-                        child: Text(
-                          "Reset",
-                          style: const TextStyle(
-                            fontSize: 25,
-                            color: Colors.white,
-                          ),
-                        ),
-                      )),
                 ],
               ),
             )

@@ -7,6 +7,11 @@ const TextStyle cell_style = TextStyle(
   fontSize: 30,
 );
 
+const TextStyle score_container_style = TextStyle(
+  fontSize: 25,
+  color: Colors.white,
+);
+
 double my_height = 100;
 
 Color X_Color = Color.fromARGB(255, 28, 27, 27);
@@ -45,6 +50,27 @@ class MyContainer extends StatelessWidget {
       child: Text(
         theText,
         style: cell_style,
+      ),
+    );
+  }
+}
+
+class ScoreContainer extends StatelessWidget {
+  Color cont_color;
+  String cont_text;
+  ScoreContainer(this.cont_color, this.cont_text, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: cell_margin,
+      width: double.infinity,
+      padding: const EdgeInsets.all(10),
+      alignment: Alignment.center,
+      color: cont_color,
+      child: Text(
+        cont_text,
+        style: score_container_style,
       ),
     );
   }
