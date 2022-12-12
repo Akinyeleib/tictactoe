@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'helper.dart';
 
-void main() => runApp(GameActivity());
+void main() => runApp(const GameActivity());
 
 class GameActivity extends StatefulWidget {
-  GameActivity({super.key});
+  const GameActivity({super.key});
 
   @override
   State<GameActivity> createState() => _GameActivityState();
@@ -63,6 +63,7 @@ class _GameActivityState extends State<GameActivity> {
               ),
             ),
             Container(
+              padding: cell_margin,
               child: Column(
                 children: [
                   // First Row
@@ -214,6 +215,7 @@ class _GameActivityState extends State<GameActivity> {
         for (var c in winning_positions) {
           if (c.contains(num) && check_winner(c)) {
             game_won = true;
+
             colors_pack[c[0]] = win_color;
             colors_pack[c[1]] = win_color;
             colors_pack[c[2]] = win_color;
