@@ -166,7 +166,7 @@ class _GameActivityState extends State<GameActivity> {
                   Container(
                     margin: cell_margin,
                     width: double.infinity,
-                    padding: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(10),
                     alignment: Alignment.center,
                     color: X_Color,
                     child: Text(
@@ -180,7 +180,7 @@ class _GameActivityState extends State<GameActivity> {
                   Container(
                     margin: cell_margin,
                     width: double.infinity,
-                    padding: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(10),
                     alignment: Alignment.center,
                     color: O_Color,
                     child: Text(
@@ -191,6 +191,22 @@ class _GameActivityState extends State<GameActivity> {
                       ),
                     ),
                   ),
+                  Container(
+                      margin: cell_margin,
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(10),
+                      alignment: Alignment.center,
+                      color: O_Color,
+                      child: TextButton(
+                        onPressed: restart,
+                        child: Text(
+                          "Reset",
+                          style: const TextStyle(
+                            fontSize: 25,
+                            color: Colors.white,
+                          ),
+                        ),
+                      )),
                 ],
               ),
             )
@@ -302,5 +318,13 @@ class _GameActivityState extends State<GameActivity> {
       played[index] = "";
       colors_pack[index] = default_color;
     }
+  }
+
+  void restart() {
+    setState(() {
+      x_score = 0;
+      o_score = 0;
+      reset_board();
+    });
   }
 }
