@@ -208,12 +208,12 @@ class _GameActivityState extends State<GameActivity> {
     play_count++;
     setState(
       () {
-        load_turn();
+        loadTurn();
         played[num] = text;
         colors_pack[num] = color;
 
-        for (var c in winning_positions) {
-          if (c.contains(num) && check_winner(c)) {
+        for (var c in winningPositions) {
+          if (c.contains(num) && checkWinner(c)) {
             game_won = true;
 
             colors_pack[c[0]] = win_color;
@@ -229,11 +229,11 @@ class _GameActivityState extends State<GameActivity> {
       },
     );
     if (game_won || play_count >= 9) {
-      reset_board();
+      resetBoard();
     }
   }
 
-  void load_turn() {
+  void loadTurn() {
     text = turn;
     if (turn == "O") {
       color = O_Color;
@@ -246,7 +246,7 @@ class _GameActivityState extends State<GameActivity> {
     }
   }
 
-  bool check_winner(List<int> combo) {
+  bool checkWinner(List<int> combo) {
     String one = played[combo[0]];
     String two = played[combo[1]];
     String three = played[combo[2]];
@@ -299,7 +299,7 @@ class _GameActivityState extends State<GameActivity> {
     clicked();
   }
 
-  void reset_board() {
+  void resetBoard() {
     play_count = 0;
     game_won = false;
     for (int index = 0; index < colors_pack.length; index++) {
@@ -312,7 +312,7 @@ class _GameActivityState extends State<GameActivity> {
     setState(() {
       x_score = 0;
       o_score = 0;
-      reset_board();
+      resetBoard();
     });
   }
 }

@@ -24,7 +24,7 @@ Color container_color = Color.fromARGB(255, 142, 143, 146);
 Color scaffold_color = Colors.white;
 Color score_panel_color = Color.fromARGB(255, 9, 10, 10);
 
-List<List<int>> winning_positions = [
+List<List<int>> winningPositions = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
