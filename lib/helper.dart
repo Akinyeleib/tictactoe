@@ -46,7 +46,10 @@ class MyContainer extends StatelessWidget {
       height: my_height,
       padding: const EdgeInsets.all(30),
       alignment: Alignment.center,
-      color: the_color,
+      decoration: BoxDecoration(
+        color: the_color,
+        borderRadius: BorderRadius.circular(25),
+      ),
       child: Text(
         theText,
         style: cell_style,
