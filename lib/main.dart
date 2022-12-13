@@ -189,7 +189,7 @@ class _GameActivityState extends State<GameActivity> {
                     child: TextButton(
                       onPressed: restart,
                       child: const Text(
-                        "Reset",
+                        "Restart",
                         style: score_container_style,
                       ),
                     ),
@@ -217,7 +217,7 @@ class _GameActivityState extends State<GameActivity> {
             game_won = true;
             changeColor(c);
             Future.delayed(
-              const Duration(seconds: 2),
+              Duration(seconds: showWinTime),
               resetBoard,
             );
             if (played[c[0]] == "X")

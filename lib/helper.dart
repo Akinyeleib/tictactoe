@@ -13,6 +13,7 @@ const TextStyle score_container_style = TextStyle(
 );
 
 double my_height = 100;
+int showWinTime = 1;
 
 Color X_Color = Color.fromARGB(255, 28, 27, 27);
 Color O_Color = Color.fromARGB(255, 159, 17, 7);
