@@ -216,6 +216,10 @@ class _GameActivityState extends State<GameActivity> {
           if (c.contains(num) && checkWinner(c)) {
             game_won = true;
             changeColor(c);
+            Future.delayed(
+              const Duration(seconds: 2),
+              resetBoard,
+            );
             if (played[c[0]] == "X")
               x_score++;
             else
@@ -225,7 +229,7 @@ class _GameActivityState extends State<GameActivity> {
         }
       },
     );
-    if (game_won || play_count >= 9) {
+    if (game_won == false && play_count >= 9) {
       resetBoard();
     }
   }
@@ -305,10 +309,12 @@ class _GameActivityState extends State<GameActivity> {
   void resetBoard() {
     play_count = 0;
     game_won = false;
-    for (int index = 0; index < colors_pack.length; index++) {
-      played[index] = "";
-      colors_pack[index] = default_color;
-    }
+    setState(() {
+      for (int index = 0; index < colors_pack.length; index++) {
+        played[index] = "";
+        colors_pack[index] = default_color;
+      }
+    });
   }
 
   void restart() {
