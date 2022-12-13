@@ -215,10 +215,7 @@ class _GameActivityState extends State<GameActivity> {
         for (var c in winningPositions) {
           if (c.contains(num) && checkWinner(c)) {
             game_won = true;
-
-            colors_pack[c[0]] = win_color;
-            colors_pack[c[1]] = win_color;
-            colors_pack[c[2]] = win_color;
+            changeColor(c);
             if (played[c[0]] == "X")
               x_score++;
             else
@@ -243,6 +240,12 @@ class _GameActivityState extends State<GameActivity> {
       color = X_Color;
       turn = "O";
       container_color = O_Color;
+    }
+  }
+
+  void changeColor(List<int> list) {
+    for (int i in list) {
+      colors_pack[i] = win_color;
     }
   }
 
