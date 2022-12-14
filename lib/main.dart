@@ -216,19 +216,22 @@ class _GameActivityState extends State<GameActivity> {
           if (c.contains(num) && checkWinner(c)) {
             game_won = true;
             changeColor(c);
-            Future.delayed(
-              Duration(seconds: showWinTime),
-              resetBoard,
-            );
-            if (played[c[0]] == "X")
-              x_score++;
-            else
-              o_score++;
-            break;
+
+            // break;
           }
         }
       },
     );
+    if (game_won) {
+      Future.delayed(
+        Duration(seconds: showWinTime),
+        resetBoard,
+      );
+      if (text == "X")
+        x_score++;
+      else
+        o_score++;
+    }
     if (game_won == false && play_count >= 9) {
       resetBoard();
     }
