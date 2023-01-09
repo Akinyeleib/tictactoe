@@ -7,6 +7,9 @@ const TextStyle cell_style = TextStyle(
   fontSize: 30,
 );
 
+const Text username = Text("Akinyele");
+const Text email = Text("iakinyele3@gmail.com");
+
 const TextStyle score_container_style = TextStyle(
   fontSize: 25,
   color: Colors.white,

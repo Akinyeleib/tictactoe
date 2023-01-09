@@ -44,6 +44,16 @@ class _GameActivityState extends State<GameActivity> {
           title: const Text(appTitle),
           centerTitle: true,
         ),
+        drawer: Drawer(
+          child: ListView(
+            children: const <Widget>[
+              UserAccountsDrawerHeader(
+                accountName: username,
+                accountEmail: email,
+              ),
+            ],
+          ),
+        ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
