@@ -54,9 +54,23 @@ class _GameActivityState extends State<GameActivity> {
                     // backgroundImage: AssetImage("assets/Akinyeleib"),
                     ),
               ),
-              ListTile(
+              const ListTile(
                 title: Text("Title"),
                 subtitle: Text("subtitle"),
+                leading: Icon(Icons.person),
+                trailing: Icon(Icons.edit),
+                // onTap: () {},
+              ),
+              ListTile(
+                title: Text("Name"),
+                subtitle: username,
+                leading: Icon(Icons.person),
+                trailing: Icon(Icons.edit),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text("email"),
+                subtitle: email,
                 leading: Icon(Icons.person),
                 trailing: Icon(Icons.edit),
                 onTap: () {},
