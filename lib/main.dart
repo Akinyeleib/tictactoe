@@ -46,10 +46,20 @@ class _GameActivityState extends State<GameActivity> {
         ),
         drawer: Drawer(
           child: ListView(
-            children: const <Widget>[
-              UserAccountsDrawerHeader(
+            children: <Widget>[
+              const UserAccountsDrawerHeader(
                 accountName: username,
                 accountEmail: email,
+                currentAccountPicture: CircleAvatar(
+                    // backgroundImage: AssetImage("assets/Akinyeleib"),
+                    ),
+              ),
+              ListTile(
+                title: Text("Title"),
+                subtitle: Text("subtitle"),
+                leading: Icon(Icons.person),
+                trailing: Icon(Icons.edit),
+                onTap: () {},
               ),
             ],
           ),
