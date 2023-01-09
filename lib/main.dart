@@ -58,7 +58,7 @@ class _GameActivityState extends State<GameActivity> {
                 title: Text("Title"),
                 subtitle: Text("subtitle"),
                 leading: Icon(Icons.person),
-                trailing: Icon(Icons.edit),
+                // trailing: Icon(Icons.edit),
                 // onTap: () {},
               ),
               ListTile(
