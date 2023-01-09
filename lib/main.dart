@@ -51,7 +51,7 @@ class _GameActivityState extends State<GameActivity> {
                 accountName: username,
                 accountEmail: email,
                 currentAccountPicture: CircleAvatar(
-                    // backgroundImage: AssetImage("assets/Akinyeleib"),
+                    backgroundImage: AssetImage("assets/Akinyeleib.jpg"),
                     ),
               ),
               const ListTile(
