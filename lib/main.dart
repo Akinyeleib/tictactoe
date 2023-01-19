@@ -207,22 +207,17 @@ class _GameActivityState extends State<GameActivity> {
   void clicked() {
     if (played[num] != "" || game_won) return;
     play_count++;
-    setState(
-      () {
-        loadTurn();
-        played[num] = text;
-        colors_pack[num] = color;
+    loadTurn();
+    played[num] = text;
+    colors_pack[num] = color;
 
-        for (var c in winningPositions) {
-          if (c.contains(num) && checkWinner(c)) {
-            game_won = true;
-            changeColor(c);
-
-            // break;
-          }
-        }
-      },
-    );
+    for (var c in winningPositions) {
+      if (c.contains(num) && checkWinner(c)) {
+        game_won = true;
+        changeColor(c);
+      }
+    }
+    setState(() {});
     if (game_won) {
       Future.delayed(
         Duration(seconds: showWinTime),
