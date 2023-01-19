@@ -181,14 +181,14 @@ class _GameActivityState extends State<GameActivity> {
                     "O Score: $o_score",
                   ),
                   // Restart Game
-                  Container(
-                    margin: cell_margin,
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(10),
-                    alignment: Alignment.center,
-                    color: themeColor,
-                    child: TextButton(
-                      onPressed: restart,
+                  InkWell(
+                    onTap: restart,
+                    child: Container(
+                      margin: cell_margin,
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(10),
+                      alignment: Alignment.center,
+                      color: themeColor,
                       child: const Text(
                         "Restart",
                         style: score_container_style,
