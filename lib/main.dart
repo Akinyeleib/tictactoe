@@ -44,40 +44,7 @@ class _GameActivityState extends State<GameActivity> {
           title: const Text(appTitle),
           centerTitle: true,
         ),
-        drawer: Drawer(
-          child: ListView(
-            children: <Widget>[
-              const UserAccountsDrawerHeader(
-                accountName: username,
-                accountEmail: email,
-                currentAccountPicture: CircleAvatar(
-                    backgroundImage: AssetImage("assets/Akinyeleib.jpg"),
-                    ),
-              ),
-              const ListTile(
-                title: Text("Title"),
-                subtitle: Text("subtitle"),
-                leading: Icon(Icons.person),
-                // trailing: Icon(Icons.edit),
-                // onTap: () {},
-              ),
-              ListTile(
-                title: Text("Name"),
-                subtitle: username,
-                leading: Icon(Icons.person),
-                trailing: Icon(Icons.edit),
-                onTap: () {},
-              ),
-              ListTile(
-                title: Text("email"),
-                subtitle: email,
-                leading: Icon(Icons.person),
-                trailing: Icon(Icons.edit),
-                onTap: () {},
-              ),
-            ],
-          ),
-        ),
+        drawer: MyDrawer(),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -360,5 +327,49 @@ class _GameActivityState extends State<GameActivity> {
       o_score = 0;
       resetBoard();
     });
+  }
+}
+
+class MyDrawer extends StatelessWidget {
+  const MyDrawer({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: <Widget>[
+          const UserAccountsDrawerHeader(
+            accountName: username,
+            accountEmail: email,
+            currentAccountPicture: CircleAvatar(
+              backgroundImage: AssetImage("assets/Akinyeleib.jpg"),
+            ),
+          ),
+          const ListTile(
+            title: Text("Title"),
+            subtitle: Text("subtitle"),
+            leading: Icon(Icons.person),
+            // trailing: Icon(Icons.edit),
+            // onTap: () {},
+          ),
+          ListTile(
+            title: Text("Name"),
+            subtitle: username,
+            leading: Icon(Icons.person),
+            trailing: Icon(Icons.edit),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text("email"),
+            subtitle: email,
+            leading: Icon(Icons.person),
+            trailing: Icon(Icons.edit),
+            onTap: () {},
+          ),
+        ],
+      ),
+    );
   }
 }
