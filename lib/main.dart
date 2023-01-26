@@ -324,6 +324,14 @@ class _GameActivityState extends State<GameActivity> {
       resetBoard();
     });
   }
+
+  showGameEndMessage(/*String message*/) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text("Snackbar here"),
+      ),
+    );
+  }
 }
 
 class MyDrawer extends StatelessWidget {
