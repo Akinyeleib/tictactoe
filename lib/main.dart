@@ -219,6 +219,7 @@ class _GameActivityState extends State<GameActivity> {
     }
     setState(() {});
     if (game_won) {
+      // showGameEndMessage();
       Future.delayed(
         Duration(seconds: showWinTime),
         resetBoard,
@@ -327,6 +328,17 @@ class _GameActivityState extends State<GameActivity> {
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TheDrawer();
+  }
+}
+
+class TheDrawer extends StatelessWidget {
+  const TheDrawer({
     Key? key,
   }) : super(key: key);
 
