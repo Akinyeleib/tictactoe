@@ -224,10 +224,11 @@ class _GameActivityState extends State<GameActivity> {
         Duration(seconds: showWinTime),
         resetBoard,
       );
-      if (text == "X")
+      if (text == "X") {
         x_score++;
-      else
+      } else {
         o_score++;
+      }
     }
     if (game_won == false && play_count >= 9) {
       resetBoard();
